@@ -1,0 +1,6 @@
+{
+  "env":{
+    "MONGO_ATLAS_PW": "g54PEQ6Yhcag0ytA",
+    "JWT_KEY": "secrte_on_backend"
+  }
+}
