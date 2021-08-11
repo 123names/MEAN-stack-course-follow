@@ -7,12 +7,13 @@ const userRoutes = require("./routes/user");
 const postRoutes = require("./routes/posts");
 
 const app = express();
+require("dotenv").config({ path: './backend/.env' });
 
 app.use(bodyParser.json());
 //app.use(bodyParser.urlencoded({extended: false}));
 app.use("/images", express.static(path.join("backend/images")));
 
-mongoose.connect("mongodb+srv://testDB:g54PEQ6Yhcag0ytA@cluster0.jceaz.mongodb.net/node-angular?retryWrites=true&w=majority")
+mongoose.connect("mongodb+srv://testDB:"+process.env.DBPASS+"@cluster0.jceaz.mongodb.net/node-angular?retryWrites=true&w=majority")
 .then(()=>{
   console.log("Connected to database");
 })
